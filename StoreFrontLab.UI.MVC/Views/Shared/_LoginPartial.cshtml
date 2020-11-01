@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        <ul>
+            @Html.AntiForgeryToken()
+            <li class="dropdown-header" >
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"aria-haspopup="true" aria-expanded="false">Account</a>
+                <div class=" dropdown-menu">
+                    <ul>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li class="dropdown-item">@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                            <li class="dropdown-item">@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                        }
+
+                        <li class="dropdown-item">
+                            <a href="/Manage/Index" title="Manage" class="fa fa-user-plus" style="padding:inherit">Profile</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="javascript:document.getElementById('logoutForm').submit()">LogOff</a>
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <li>
+        <a href="/Account/Register" id="registerLink">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+        </a>
+    </li>
+
+    <li class="nav-item"> <a href="/Account/Login" id="loginLink">Log In</a></li>
+}
+

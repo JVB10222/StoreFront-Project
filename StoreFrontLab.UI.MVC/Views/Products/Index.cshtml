@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Storefront.Data.EF.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*@model PagedList.IPagedList<StoreFrontLab.DATA.EF.Product>
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Server side MVC paging";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<!--Integrated Search After just doing MVC Paging-->
+<div class="row searchPanel">
+    @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+    {
+        <div class="col-md-2 text-right">
+            <label for="searchFilter">
+                SearchName:
+            </label>
+        </div>
+        <div class="col-md-6">
+            <!--Hang on to the value of the search so that it continues through the searched results on round trips to the server-->
+            @Html.TextBox("SearchString", ViewBag.SearchString as string)
+        </div>
+        <div class="col-md-2 text-center">
+            <input type="submit" value="Search!" class="btn btn-primary" />
+        </div>
+        <div class="col-md-2 text-center">
+            @Html.ActionLink("Reset", "Index", "Product", null, new { @class = "btn btn-danger" })
+        </div>
+    }
+
+</div>*@
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityPerUnit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitsOnOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReorderLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discontinued)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplier.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoeImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ProductName)*@
+                @Html.ActionLink(item.ProductName, "Details", new { id = item.ProductID})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReorderLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discontinued)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ShoeImage)*@
+                <a href="@Url.Action("Details", new { id = item.ProductID })"> 
+                    <img src="~/Content/img/shoeImage/t_@item.ShoeImage" alt="Shoe Cover" title="@item.ProductName" />
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="container py-5">
+    <h2 class="lined mb-4">Fresh Finds</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("Details", "Details", new { id = item.ProductID })" data-lightbox="gallery" data-title="Description of Project No.1" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/shoeImage/@item.ShoeImage" alt="" class="img-fluid"></a>
+        }
+        @*<a href="~/Content/img/portfolio-1.jpg" data-lightbox="gallery" data-title="Description of Project No.1" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-1.jpg" alt="" class="img-fluid"></a>*@
+        
+        
+
+    </div>
+</div>

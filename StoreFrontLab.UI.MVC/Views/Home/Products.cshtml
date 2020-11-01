@@ -1,0 +1,52 @@
+﻿@*@model IEnumerable<StoreFrontLab.DATA.EF.Product>*@
+
+@model PagedList.IPagedList<StoreFrontLab.UI.MVC.Models.ProductsViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@foreach (var product in Model)
+{
+
+    @product.ProductName
+
+    @*<div class="col-lg-4 col-sm-6">
+            <div class="product text-center">
+                <div class="mb-3 position-relative">
+                    <div class="badge text-white badge-"></div><a class="d-block" href="@Url.Action("Detail", "Shop", new { id = product.ProductID })"><img class="img-fluid w-100" src="~/content/img/t_@product.ShoeImage" alt="@product.ProductName"></a>
+                    <div class="product-overlay">
+                        <ul class="mb-0 list-inline">
+                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="@Url.Action("Detail", "Shop", new { id = product.ProductID })"><i class="fas fa-expand"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h6> <a class="reset-anchor" href="detail.html">@product.ProductName</a></h6>
+                <p class="small text-muted">@product.UnitPrice</p>
+            </div>
+        </div>*@
+}
+
+<div class="container py-5">
+    <h2 class="lined mb-4">Fresh Finds</h2>
+    <div class="row">
+        <a href="~/Content/img/portfolio-1.jpg" data-lightbox="gallery" data-title="Description of Project No.1" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-1.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-2.jpg" data-lightbox="gallery" data-title="Description of Project No.2" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-2.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-3.jpg" data-lightbox="gallery" data-title="Description of Project No.3" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-3.jpg" alt="" class="img-fluid"></a>
+        <a href="img/portfolio-4.jpg" data-lightbox="gallery" data-title="Description of Project No.4" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-4.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-5.jpg" data-lightbox="gallery" data-title="Description of Project No.5" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-5.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-6.jpg" data-lightbox="gallery" data-title="Description of Project No.6" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-6.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-7.jpg" data-lightbox="gallery" data-title="Description of Project No.7" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-7.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-8.jpg" data-lightbox="gallery" data-title="Description of Project No.8" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-8.jpg" alt="" class="img-fluid"></a>
+        <a href="~/Content/img/portfolio-9.jpg" data-lightbox="gallery" data-title="Description of Project No.9" class="col-lg-4 col-sm-6 p-0"><img src="~/Content/img/portfolio-9.jpg" alt="" class="img-fluid"></a>
+
+    </div>
+</div>
+
+
+@* create a for loop to generate a single line for each of my products data server.
+    then add input elements for add to cart function and also color? (maybe if time available)
+*@
+
