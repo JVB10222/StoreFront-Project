@@ -183,6 +183,7 @@
     <Compile Include="Controllers\Order_DetailController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -192,6 +193,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProductsViewModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utilities\ImageService.cs" />
@@ -214,31 +216,32 @@
     <Content Include="Content\css\style.violet.css" />
     <Content Include="Content\css\style.violet.min.css" />
     <Content Include="Content\fonts\Pe-icon-7-stroke.svg" />
-    <Content Include="Content\img\blog-avatar.jpg" />
-    <Content Include="Content\img\blog-avatar2.jpg" />
-    <Content Include="Content\img\blog1.jpg" />
-    <Content Include="Content\img\blog2.jpg" />
-    <Content Include="Content\img\blog3.jpg" />
-    <Content Include="Content\img\favicon.png" />
-    <Content Include="Content\img\jonathan-j-castellon-4xGEJ_D7zb8-unsplash %281%29.jpg" />
-    <Content Include="Content\img\jumbotron1.jpg" />
-    <Content Include="Content\img\marker.png" />
-    <Content Include="Content\img\marker.svg" />
-    <Content Include="Content\img\markus-spiske-oXS1f0uZYV4-unsplash %281%29.jpg" />
-    <Content Include="Content\img\person-1.jpg" />
-    <Content Include="Content\img\person-2.jpg" />
-    <Content Include="Content\img\person-4.jpg" />
-    <Content Include="Content\img\portfolio-1.jpg" />
-    <Content Include="Content\img\portfolio-2.jpg" />
-    <Content Include="Content\img\portfolio-3.jpg" />
-    <Content Include="Content\img\portfolio-4.jpg" />
-    <Content Include="Content\img\portfolio-5.jpg" />
-    <Content Include="Content\img\portfolio-6.jpg" />
-    <Content Include="Content\img\portfolio-7.jpg" />
-    <Content Include="Content\img\portfolio-8.jpg" />
-    <Content Include="Content\img\portfolio-9.jpg" />
+    <Content Include="Content\img\shoeImage\ea000128-f820-4569-be9f-51b6a37f56d6.jpg" />
+    <Content Include="Content\img\stockphotos\blog-avatar.jpg" />
+    <Content Include="Content\img\stockphotos\blog-avatar2.jpg" />
+    <Content Include="Content\img\stockphotos\blog1.jpg" />
+    <Content Include="Content\img\stockphotos\blog2.jpg" />
+    <Content Include="Content\img\stockphotos\blog3.jpg" />
+    <Content Include="Content\img\stockphotos\favicon.png" />
+    <Content Include="Content\img\stockphotos\jonathan-j-castellon-4xGEJ_D7zb8-unsplash %281%29.jpg" />
+    <Content Include="Content\img\stockphotos\jumbotron1.jpg" />
+    <Content Include="Content\img\stockphotos\marker.png" />
+    <Content Include="Content\img\stockphotos\marker.svg" />
+    <Content Include="Content\img\stockphotos\markus-spiske-oXS1f0uZYV4-unsplash %281%29.jpg" />
+    <Content Include="Content\img\stockphotos\person-1.jpg" />
+    <Content Include="Content\img\stockphotos\person-2.jpg" />
+    <Content Include="Content\img\stockphotos\person-4.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-1.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-2.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-3.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-4.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-5.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-6.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-7.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-8.jpg" />
+    <Content Include="Content\img\stockphotos\portfolio-9.jpg" />
     <Content Include="Content\img\shoeImage\8708_atlanta_hawks-alternate-2016.png" />
-    <Content Include="Content\img\template-mac.png" />
+    <Content Include="Content\img\stockphotos\template-mac.png" />
     <Content Include="Content\js\demo.js" />
     <Content Include="Content\js\front.js" />
     <Content Include="Content\PagedList.css" />
@@ -597,6 +600,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\vendor\jquery.cookie\test\" />
+    <Folder Include="Views\ShoppingCart\" />
     <Folder Include="_archive\vendor\jquery.cookie\test\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿@model StoreFrontLab.DATA.EF.Product
+﻿@model Storefront.Data.EF.Product
 
 @{
     ViewBag.Title = "Details";
@@ -96,6 +96,25 @@
 
         <dd>
             @Html.DisplayFor(model => model.Supplier.CompanyName)
+        </dd>
+
+        <dt>
+            <label>Quantity</label>
+        </dt>
+
+        <dd>
+            @using (Html.BeginForm("AddToCart", "Products", new { productID = Model.ProductID }, FormMethod.Post, new { style = "display:inline;" }))
+            {
+                @Html.HiddenFor(x => x.ProductID)
+                <span class="col-form-label">Quantity: </span>
+                @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width:50px;display:inline;" })
+                <input type="submit" value="Add To Cart" class="main-button" name="qty" />
+            }
+            @if (ViewBag.Message != null)
+            {
+                <h2>@ViewBag.Message</h2>
+            }
+
         </dd>
 
     </dl>
